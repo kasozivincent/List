@@ -54,3 +54,9 @@ void print_list(const List list, Show show, bool start){
           print_list(tail, show, false);
     }
 }
+
+List filter(const List list, Predicate predicate){
+    if(null(list)) return None;
+    else if(predicate(head)) return  cons(head, filter(tail, predicate));
+    else return filter(tail, predicate);
+}
