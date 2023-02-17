@@ -17,3 +17,4 @@ List singleton(Data);
 List map(const List, Func);
 void print_list(const List, Show, bool);
 List filter(const List, Predicate);
+List concat(const List, const List);

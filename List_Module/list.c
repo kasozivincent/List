@@ -60,3 +60,8 @@ List filter(const List list, Predicate predicate){
     else if(predicate(head)) return  cons(head, filter(tail, predicate));
     else return filter(tail, predicate);
 }
+
+List concat(const List left, const List right){
+    if(null(left)) return right;
+    else return cons(left->content, concat(left->next, right));
+}
