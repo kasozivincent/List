@@ -65,3 +65,8 @@ List concat(const List left, const List right){
     if(null(left)) return right;
     else return cons(left->content, concat(left->next, right));
 }
+
+List append(Data item, const List list){
+    if(null(list)) return singleton(item);
+    else return cons(head, append(item, tail));
+}
