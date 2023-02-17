@@ -19,3 +19,8 @@ List empty_list(){
 bool null(const List list){
     return list->head == None;
 }
+
+int list_length(const List list){
+    if(null(list)) return 0;
+    else return 1 + list_length(list->head->tail);
+}
