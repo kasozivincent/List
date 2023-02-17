@@ -75,3 +75,14 @@ List from_array(Data arr[], int size){
     if(size == 0) return None;
     else return concat(from_array(arr, size - 1), singleton(arr[size - 1]));
 }
+
+List _intersperse(Data, const List);
+List intersperse(Data item, const List list){
+    if(null(list)) return None;
+    else return cons(head, _intersperse(item, tail));
+}
+
+List _intersperse(Data item, const List list){
+    if(null(list)) return None;
+    else return cons(item, intersperse(item, list));
+}
