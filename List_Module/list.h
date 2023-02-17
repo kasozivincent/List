@@ -10,3 +10,4 @@ typedef struct _node* Node;
 typedef struct _list* List;
 
 List empty_list();
+bool null(const List);

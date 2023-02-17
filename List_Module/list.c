@@ -15,3 +15,7 @@ List empty_list(){
     *listptr = (struct _list){.head = None};
     return listptr; 
 }
+
+bool null(const List list){
+    return list->head == None;
+}
