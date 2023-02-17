@@ -4,11 +4,10 @@
 
 #define None NULL
 
-struct _list;
 typedef void* Data;
-typedef struct _node* Node;
-typedef struct _list* List;
+typedef struct _node* List;
 
-List empty_list();
 bool null(const List);
 int list_length(const List);
+List list_prepend(Data, const List);
+List singleton(Data);
