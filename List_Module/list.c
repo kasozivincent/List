@@ -70,3 +70,8 @@ List append(Data item, const List list){
     if(null(list)) return singleton(item);
     else return cons(head, append(item, tail));
 }
+
+List from_array(Data arr[], int size){
+    if(size == 0) return None;
+    else return concat(from_array(arr, size - 1), singleton(arr[size - 1]));
+}

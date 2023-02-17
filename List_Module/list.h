@@ -19,3 +19,4 @@ void print_list(const List, Show, bool);
 List filter(const List, Predicate);
 List concat(const List, const List);
 List append(Data, const List);
+List from_array(Data [], int);
