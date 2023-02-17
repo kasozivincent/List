@@ -1,5 +1,5 @@
 #include "list.h"
-#define head list->data
+#define head list->content
 #define tail list->next
 
 typedef List Node;
@@ -33,4 +33,24 @@ List list_prepend(Data item, const List list){
 
 List singleton(Data item){
     return cons(item, None);
+}
+
+List map(const List list, Func func){
+    if(null(list)) return None;
+    else return cons(func(head), map(tail, func));
+}
+
+void print_list(const List list, Show show, bool start){
+    if(null(list)) printf("[]\n");
+    else{
+          if(start)
+            printf("[");
+          show(head);
+          if(list->next != None)
+            printf(", ");
+          else{
+            printf("]\n"); return;
+          }
+          print_list(tail, show, false);
+    }
 }
